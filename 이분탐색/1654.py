@@ -43,3 +43,21 @@ result = binary_search(0, max(lans), N)
 #     print(max(max(asw), result))
 # else:
 print(result)
+
+
+# 최적화
+start, end = 1, max(lans)
+while start <= end:
+    mid = (start + end) // 2
+    print(mid)
+
+    line_cnt = 0
+
+    for lan in lans:
+        line_cnt += lan // mid
+
+    if line_cnt >= N:
+        start = mid + 1
+    else:
+        end = mid - 1
+print(end)
